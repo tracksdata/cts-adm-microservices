@@ -1,7 +1,7 @@
 package com.cts.pricematrix;
 
 //Dependency
-public class PriceMatrixImpl  extends Thread{
+public class PriceMatrixImpl implements PriceMatrix{
 	
 	/*
 	 * Types of objects: 2 types
@@ -12,6 +12,7 @@ public class PriceMatrixImpl  extends Thread{
 		System.out.println("-- PriceMatrixImpl object created...");
 	}
 
+	@Override
 	public double getItemPrice(String itemCode) {
 
 		// code to fetch price of a given item-code from DB

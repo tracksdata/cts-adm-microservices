@@ -1,13 +1,13 @@
 package com.cts.bill;
 
-import com.cts.pricematrix.PriceMatrixImpl;
+import com.cts.pricematrix.PriceMatrix;
 //Dependent
-public class BillingImpl {
+public class BillingImpl implements Billing {
 	
+	private PriceMatrix price; // reference object declaration
 	
-	private PriceMatrixImpl price; // reference object declaration
-	
-	public void setPrice(PriceMatrixImpl price) {
+	@Override
+	public void setPrice(PriceMatrix price) {
 		this.price = price;
 	}
 	
@@ -60,6 +60,7 @@ public class BillingImpl {
 	
 
 
+	@Override
 	public double getCartTotal(String[] cart) {
 
 		double total = 0.0;
