@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1  align="center">Welcome to Two.html</h1>
+<hr/>
+
+
+<p th:text="${name}"></p>
+
+<p th:text="${mycities}"></p>
+
+<hr/>
+
+<ul th:each="cityName:${mycities}">
+	
+	<li th:text="${cityName}"> </li>
+
+</ul>
+
+
+
+</body>
+</html>
