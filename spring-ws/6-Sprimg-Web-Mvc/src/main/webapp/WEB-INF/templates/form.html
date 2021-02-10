@@ -6,19 +6,44 @@
 </head>
 <body>
 
-<h1  align="center">Product Form</h1>
-<hr/>
+	<h1 align="center">Product Form</h1>
+	<hr />
+
+	<form action="s6" method="post" >
+
+		<table align="center">
+		
+			<tr>
+				<th>Name</th>
+				<td><input type="text" name="name" /></td>
+			</tr>
+
+			<tr>
+				<th>Price</th>
+				<td><input type="text" name="price" /></td>
+			</tr>
+			<tr>
+				<th>Description</th>
+				<td><textarea name="description"></textarea></td>
+			</tr>
+			
+			<tr>
+				<th colspan="2">
+				  <p th:text="${msg}"></p>
+				</th>
+			</tr>
+
+			<tr>
+				<th colspan="2"><input type="submit" value="Save"></th>
+			</tr>
 
 
-<form action="s6">
-Product ID: <input type="text" name="id"/> <br/>
-Product Name: <input type="text" name="name"/> <br/>
-Product Price: <input type="text" name="price"/> <br/>
-Description: <input type="text" name="description"/> <br/>
+		</table>
 
 
-<input type="submit" value="Save">
-</form>
+	</form>
+	
+	<hr/>
 
 
 </body>

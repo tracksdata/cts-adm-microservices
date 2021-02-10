@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1  align="center">Welcome to Two.html</h1>
+<hr/>
+
+<h1 align="center">Products</h1> <hr/>
+
+<table align="center" cellpadding="5" cellspacing="5">
+  <thead>
+    <tr>
+      <th>Product Id</th>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Option1</th>
+      <th>Option2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="prod: ${products}">
+      <td th:text="${prod.id}"></td>
+      <td th:text="${prod.name}"></td>
+      <td th:text="${prod.price}"></td>
+      <td th:text="${prod.description}"></td>
+      <td><a href="">Edit</a></td>
+      <td><a href="">Delete</a></td>
+    
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+
+<h2>
+<a href="./">Add Another Record</a>
+</h2>
+
+
+</body>
+</html>

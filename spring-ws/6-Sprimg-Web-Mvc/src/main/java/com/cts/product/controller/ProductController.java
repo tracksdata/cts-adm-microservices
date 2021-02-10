@@ -1,5 +1,6 @@
 package com.cts.product.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -7,10 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.cts.product.model.Product;
+import com.cts.product.entity.Product;
+import com.cts.product.service.ProductService;
 
 @Controller
 public class ProductController {
+	
+	
+	@Autowired
+	private ProductService ps;
 	
 	@RequestMapping(value = "/s1")
 	public void f1() {
@@ -63,16 +69,26 @@ public class ProductController {
 		return "form";
 	}
 	
+	
+	// list all records 
+	
+	@RequestMapping("/findAll")
+	public String findAll(Model model) {
+		model.addAttribute("products", ps.findAll());
+		
+		return "products";
+	}
+	
+	
+	// write data to db
 	@RequestMapping("/s6")
 	public String processFormV1(@ModelAttribute Product product) {
 		
-		System.out.println(">>>>>>> s6 request <<<<<<<<");
-		System.out.println("ID: "+product.getId());
-		System.out.println("Name: "+product.getName());
-		System.out.println("Price: "+product.getPrice());
-		System.out.println("Description: "+product.getDescription());
 		
-		return "form";
+		ps.save(product);
+	
+
+		return "redirect:/findAll";
 	}
 	
 	
