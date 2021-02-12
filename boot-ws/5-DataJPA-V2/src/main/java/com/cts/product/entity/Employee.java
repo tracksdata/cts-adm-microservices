@@ -1,5 +1,7 @@
 package com.cts.product.entity;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -18,19 +20,9 @@ public class Employee {
 	private double salary;
 	private String designation;
 	
-	@OneToOne
-	@JoinColumn(name="deptId")
-	private Department dept;
-	
 	
 
-	public Department getDept() {
-		return dept;
-	}
-
-	public void setDept(Department dept) {
-		this.dept = dept;
-	}
+	
 
 	public int getEmpId() {
 		return empId;
