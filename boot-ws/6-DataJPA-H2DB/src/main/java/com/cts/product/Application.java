@@ -1,5 +1,7 @@
 package com.cts.product;
 
+import java.util.Arrays;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -45,22 +47,14 @@ public class Application {
 		d1.getEmps().add(e2);
 		d1.getEmps().add(e3);
 
-		
-		empDao.findEmployeeByEmpNameLikeAndSalaryGreaterThanEqualAndDesignationLike("%a%",50000,"Trainer").forEach(emp->{
-			System.out.println(emp.getEmpId());
-			System.out.println(emp.getEmpName());
-			System.out.println(emp.getSalary());
-			System.out.println(emp.getDesignation());
-		});
-		
-		
-		
-		// empDao.saveAll(Arrays.asList(e1,e2,e3));
+		deptDao.save(d1);
 
-		//deptDao.save(d1);
-	
+		 empDao.saveAll(Arrays.asList(e1,e2,e3));
+
+		deptDao.save(d1);
+		
+		//Department dept = deptDao.findById(1).orElse(null);
 		/*
-		Department dept = deptDao.findById(1).orElse(null);
 		
 		System.out.println(dept.getDeptId());
 		System.out.println(dept.getDeptName());
@@ -73,7 +67,8 @@ public class Application {
 			System.out.println(emp.getDesignation());
 			System.out.println("-----------------------------");
 		}
-
+		
+		*/
 
 		/*
 		//Employee emp = empDao.findById(18).orElse(null);
