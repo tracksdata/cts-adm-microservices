@@ -1,4 +1,4 @@
-package com.cts.product;
+package com.cts.flight;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
