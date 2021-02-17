@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+
+	<h1>Scheduled Flights In India</h1>
+	<hr />
+
+	<hr />
+
+	<table align="center" border="1" cellspacing="5" cellpadding="5">
+		<thead>
+			<tr>
+				<th>Flight ID</th>
+				<th>Flight Number</th>
+				<th>From</th>
+				<th>To</th>
+				<th>Flying Date</th>
+				<th>Time</th>
+				<th>Duration</th>
+				<th>Price</th>
+				<th>Available Flights</th>
+				
+			</tr>
+			
+			
+		</thead>
+		<tbody>
+			<tr th:each="flight: ${flights}">
+				<td th:text="${flight.id}"></td>
+				<td th:text="${flight.flightNumber}"></td>
+				<td th:text="${flight.origin}"></td>
+				<td th:text="${flight.destination}"></td>
+				<td th:text="${flight.flightDate}"></td>
+				<td th:text="${flight.flightTime}"></td>
+				<td th:text="${flight.duration}"></td>
+				<td th:text="${flight.fare.fare}"></td>
+				<td th:text="${flight.inventory.count}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+<hr/>
+
+
+
+</body>
+</html>
