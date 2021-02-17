@@ -1,0 +1,36 @@
+<h1>Hello Angular</h1>
+
+<table align="center" border="1" cellspacing="5" cellpadding="5">
+  <thead>
+    <tr>
+      <th>Flight ID</th>
+      <th>Flight Number</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Flying Date</th>
+      <th>Time</th>
+      <th>Duration</th>
+      <th>Price</th>
+      <th>Available Flights</th>
+      
+    </tr>
+    
+    
+  </thead>
+  <tbody>
+    <tr *ngFor="let flight of flights">
+     
+    <td>{{flight.id}}</td>
+    <td>{{flight.flightNumber}}</td>
+    <td>{{flight.origin}}</td>
+    <td>{{flight.destination}}</td>
+    <td>{{flight.flightDate}}</td>
+    <td>{{flight.flightTime}}</td>
+
+    <td>{{flight.duration}}</td>
+    <td>{{flight.fare.fare}}</td>
+    <td>{{flight.inventory.count}}</td>
+   
+    </tr>
+  </tbody>
+</table>
